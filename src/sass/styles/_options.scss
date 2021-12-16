@@ -1,0 +1,56 @@
+form {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #9e886c;
+
+  select {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: all ease 0.3s;
+    cursor: pointer;
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: turquoise;
+    font-weight: bold;
+    border: solid 1px transparent;
+    transition: all ease 0.3s;
+    &:hover {
+      background-color: rgb(83, 255, 238);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  }
+}
+
+.error-message {
+  margin-bottom: 30px;
+  color: red;
+}
+
+// Responsive design
+
+@media screen and (max-width: 992px) {
+  form {
+    width: 70%;
+    flex-wrap: wrap;
+    select,
+    button {
+      width: 48%;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  form {
+    width: 90%;
+  }
+}

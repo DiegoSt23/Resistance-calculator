@@ -16,14 +16,14 @@ const Options = ({
 }) => {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
-  const [value3, setValue3] = useState("");
+  const [multiplier, setMultiplier] = useState("");
   const [errorMessageStatus, setErrorMessageStatus] = useState(false);
 
   const handleCalculateResistance = (e) => {
     e.preventDefault();
-    if (value1 && value2 && value3) {
-      const firstValue = `${value1}${value2}`;
-      setResistanceValue(Number(firstValue * value3));
+    if (value1 && value2 && multiplier) {
+      const totalValue = `${value1}${value2}`;
+      setResistanceValue(Number(totalValue * multiplier));
       setErrorMessageStatus(false);
     } else {
       setErrorMessageStatus(true);
@@ -48,8 +48,8 @@ const Options = ({
           language={language}
         />
         <Select2
-          value={value3}
-          setValue={setValue3}
+          multiplier={multiplier}
+          setMultiplier={setMultiplier}
           color={color3}
           setColor={setColor3}
           language={language}

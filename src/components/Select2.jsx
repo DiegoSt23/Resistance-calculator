@@ -1,50 +1,54 @@
 import { useEffect } from "react";
 
-const Select2 = ({ value, setValue, color, setColor, language }) => {
+const Select2 = ({ multiplier, setMultiplier, color, setColor, language }) => {
   useEffect(() => {
-    if (value === "") {
+    if (multiplier === "") {
       setColor("#b89872");
     }
-    if (value === "10") {
+    if (multiplier === "1") {
+      setColor("#000000");
+    }
+    if (multiplier === "10") {
       setColor("#66533b");
     }
-    if (value === "100") {
+    if (multiplier === "100") {
       setColor("#ff0000");
     }
-    if (value === "1000") {
+    if (multiplier === "1000") {
       setColor("#ffa600");
     }
-    if (value === "10000") {
+    if (multiplier === "10000") {
       setColor("#ffff00");
     }
-    if (value === "100000") {
+    if (multiplier === "100000") {
       setColor("#00ff4c");
     }
-    if (value === "1000000") {
+    if (multiplier === "1000000") {
       setColor("#4c84fd");
     }
-    if (value === "10000000") {
+    if (multiplier === "10000000") {
       setColor("#9f4cfd");
     }
-    if (value === "100000000") {
+    if (multiplier === "100000000") {
       setColor("#808080");
     }
-    if (value === "1000000000") {
+    if (multiplier === "1000000000") {
       setColor("#ffffff");
     }
-  }, [value, setColor]);
+  }, [multiplier, setColor]);
 
   return (
     <select
-      value={value}
+      value={multiplier}
       onChange={(e) => {
-        setValue(e.target.value);
+        setMultiplier(e.target.value);
       }}
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: color, color: multiplier === "1" && "white" }}
     >
       {language === "en-US" && (
         <>
           <option value="">Select a color</option>
+          <option value="1">Black</option>
           <option value="10">Brown</option>
           <option value="100">Red</option>
           <option value="1000">Orange</option>
@@ -59,6 +63,7 @@ const Select2 = ({ value, setValue, color, setColor, language }) => {
       {language === "es-US" && (
         <>
           <option value="">Selecciona un color</option>
+          <option value="1">Negro</option>
           <option value="10">Cafe</option>
           <option value="100">Rojo</option>
           <option value="1000">Naranja</option>

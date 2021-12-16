@@ -5,6 +5,9 @@ const Select1 = ({ value, setValue, color, setColor, language }) => {
     if (value === "") {
       setColor("#b89872");
     }
+    if (value === "0") {
+      setColor("#000000");
+    }
     if (value === "1") {
       setColor("#66533b");
     }
@@ -40,11 +43,12 @@ const Select1 = ({ value, setValue, color, setColor, language }) => {
       onChange={(e) => {
         setValue(e.target.value);
       }}
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: color, color: value === "0" && "white" }}
     >
       {language === "en-US" && (
         <>
           <option value="">Select a color</option>
+          <option value="0">Black</option>
           <option value="1">Brown</option>
           <option value="2">Red</option>
           <option value="3">Orange</option>
@@ -59,6 +63,7 @@ const Select1 = ({ value, setValue, color, setColor, language }) => {
       {language === "es-US" && (
         <>
           <option value="">Selecciona un color</option>
+          <option value="0">Negro</option>
           <option value="1">Cafe</option>
           <option value="2">Rojo</option>
           <option value="3">Naranja</option>
